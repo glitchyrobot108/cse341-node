@@ -5,7 +5,7 @@ const { MongoClient, ObjectId } = require('mongodb');
 const contacts = require("./controllers/contacts");
 
 //Lesson 2
-app.get("/contacts", async (req, res) => {
+app.get("/", async (req, res) => {
     const results = await contacts.listDocumentsRoute()
     res.send(results)
     console.log(results)
@@ -21,7 +21,7 @@ app.get("/contacts", async (req, res) => {
 
 //Credit to ChatGPT
 // Define route to search for contact by ID
-app.get('/contacts/:id', async (req, res) => {
+app.get('/:id', async (req, res) => {
     const id = req.params.id; // Get the ID parameter from the URL
 
     // Connect to MongoDB
