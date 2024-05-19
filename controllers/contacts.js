@@ -1,5 +1,3 @@
-const contact = require("../models/contact")
-
 const {ObjectId} = require("mongodb")
 
 //Connect to DB
