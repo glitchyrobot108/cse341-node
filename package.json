@@ -6,12 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
+    "start-prod": "node app.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "swagger": "node ./swagger.js"
   },
-  "author": "Joe Burner",
+  "author": "Casey",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^9.2.0",
