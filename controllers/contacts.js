@@ -15,9 +15,9 @@ async function createContact(req, res){
     //Credit: Brother Birch
     if (result.acknowledged) {
         res.status(201).json(result);
-      } else {
+    } else {
         res.status(500).json(result.error || 'Some error occurred while creating the contact.');
-      }
+    }
 }
 
 async function deleteContact(req, res){
@@ -26,9 +26,9 @@ async function deleteContact(req, res){
     const result = await client.db("test").collection("contacts").deleteOne({_id: obj})
     if (result.deletedCount > 0) {
         res.status(204).json(result);
-      } else {
+    } else {
         res.status(500).json(result.error || 'Some error occurred while deleting the contact.');
-      }
+    }
 }
 
 async function updateContact(req, res){

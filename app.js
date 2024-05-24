@@ -1,20 +1,11 @@
+require("dotenv/config")
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser")
+const cors = require("cors")
 
-require("dotenv/config")
-
-//Import routes
-const contatctsRoute = require("./routes/contacts")
-
-//Middleware
-app.use(bodyParser.json())
-app.use("/contacts", contatctsRoute)
-
-//Routes
-app.get("/", (req, res) => {
-    res.send("Home")
-})
+//Middleware: using bodyparser, using cors, using routes
+app.use(bodyParser.json()).use(cors()).use("/", require("./routes"))
 
 //Listen to server
 app.listen(process.env.PORT, () => {
